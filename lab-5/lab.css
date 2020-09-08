@@ -67,12 +67,15 @@ div.box{
 	background-color: #333;
 }
 .box._toggle{
-	background-color: yellow;
+	background-image: url('up.png');
+	background-size: 100%;
+	background-color: transparent;
+	background-repeat: no-repeat;
 	transition: none;
-	opacity: .5;
 }
 .box._toggle[data-isrightarrow="0"]{
-	background-color: red;
+	background-image: url('up.png');
+	transform: rotate(90deg);
 }
 
 
@@ -101,7 +104,7 @@ div.box{
 	border: 3px solid #fffc;
 	transform: scale(.6);
 }
-.box._fruit[data-type="11"]{
+.box._fruit[data-type="red"]{
 	background-color: red;
 }
 
