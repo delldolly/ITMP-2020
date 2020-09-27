@@ -82,6 +82,15 @@
 							this.fruits[f].run = false
 						}
 					}
+					
+					// random fruit
+					if (rand(1, 10) % 3 == 1) {
+						this.fruits.push({ id: nextFruitId, type: 'red', pst: 1, run: true, step: 1 })
+						nextFruitId++
+					} else if (rand(1, 10) % 3 == 0) {
+						this.fruits.push({ id: nextFruitId, type: 'yellow', pst: 1, run: true, step: 1 })
+						nextFruitId++
+					}
 				}
 			}
 		})
