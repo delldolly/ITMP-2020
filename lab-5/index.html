@@ -78,19 +78,22 @@
 							this.fruits[f].step = 3;
 						}
 						if (this.fruits[f].pst == 12 || this.fruits[f].pst == 16) {
-							if (this.fruitsf[f].pst == 12 && this.fruitsf[f].type == 'red') {
+							if (this.fruitsf[f].pst == 12 && this.fruitsf[f].type == 'red' && this.fruits[f].run == true) {
 								this.score++
 								this.fruitsf[f].run = false
-							} else if (this.fruitsf[f].pst == 16 && this.fruitsf[f].type == 'yellow') {
+							} else if (this.fruitsf[f].pst == 16 && this.fruitsf[f].type == 'yellow' && this.fruits[f].run == true) {
 								this.score++
 								this.fruitsf[f].run = false
-							} else {
+							} else if (this.fruitsf[f].pst == 12 && this.fruitsf[f].type == 'yellow') {
+								clearInterval(playing)
+								this.play = false
+							} else if (this.fruitsf[f].pst == 16 && this.fruitsf[f].type == 'red') {
 								clearInterval(playing)
 								this.play = false
 							}
 						}
 					}
-					
+
 					// random fruit
 					if (rand(1, 10) % 3 == 1) {
 						this.fruits.push({ id: nextFruitId, type: 'red', pst: 1, run: true, step: 1 })
@@ -99,6 +102,9 @@
 						this.fruits.push({ id: nextFruitId, type: 'yellow', pst: 1, run: true, step: 1 })
 						nextFruitId++
 					}
+				},
+				score: function () {
+					this.speed += 5000
 				}
 			}
 		})
