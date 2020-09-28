@@ -68,7 +68,7 @@
 			},
 			computed: {},
 			watch: {
-				turn: function (x) {
+				turn: function () {
 					for (let f in this.fruits) {
 						if (this.fruits[f].run) {
 							this.fruits[f].pst += this.fruits[f].step
@@ -78,16 +78,16 @@
 							this.fruits[f].step = 3;
 						}
 						if (this.fruits[f].pst == 12 || this.fruits[f].pst == 16) {
-							if (this.fruitsf[f].pst == 12 && this.fruitsf[f].type == 'red' && this.fruits[f].run == true) {
+							if (this.fruits[f].pst == 12 && this.fruits[f].type == 'red' && this.fruits[f].run == true) {
 								this.score++
-								this.fruitsf[f].run = false
-							} else if (this.fruitsf[f].pst == 16 && this.fruitsf[f].type == 'yellow' && this.fruits[f].run == true) {
+								this.fruits[f].run = false
+							} else if (this.fruits[f].pst == 16 && this.fruits[f].type == 'yellow' && this.fruits[f].run == true) {
 								this.score++
-								this.fruitsf[f].run = false
-							} else if (this.fruitsf[f].pst == 12 && this.fruitsf[f].type == 'yellow') {
+								this.fruits[f].run = false
+							} else if (this.fruits[f].pst == 12 && this.fruits[f].type == 'yellow') {
 								clearInterval(playing)
 								this.play = false
-							} else if (this.fruitsf[f].pst == 16 && this.fruitsf[f].type == 'red') {
+							} else if (this.fruits[f].pst == 16 && this.fruits[f].type == 'red') {
 								clearInterval(playing)
 								this.play = false
 							}
