@@ -78,8 +78,16 @@
 							this.fruits[f].step = 3;
 						}
 						if (this.fruits[f].pst == 12 || this.fruits[f].pst == 16) {
-							this.score++
-							this.fruits[f].run = false
+							if (this.fruitsf[f].pst == 12 && this.fruitsf[f].type == 'red') {
+								this.score++
+								this.fruitsf[f].run = false
+							} else if (this.fruitsf[f].pst == 16 && this.fruitsf[f].type == 'yellow') {
+								this.score++
+								this.fruitsf[f].run = false
+							} else {
+								clearInterval(playing)
+								this.play = false
+							}
 						}
 					}
 					
